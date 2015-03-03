@@ -1,0 +1,37 @@
+{
+  "name": "etcd-config",
+  "version": "0.0.1",
+  "description": "A node.js library to manage service discovery and registration on top of etcd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SidBala/etcd-config.git"
+  },
+  "keywords": [
+    "service",
+    "discovery",
+    "etcd",
+    "registration",
+    "configuration",
+    "config",
+    "management",
+    "watch",
+    "change",
+    "ports"
+  ],
+  "author": "Sid Bala <Sid.Bala@Outlook.com> (http://SidBala.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SidBala/etcd-config/issues"
+  },
+  "homepage": "https://github.com/SidBala/etcd-config",
+  "dependencies": {
+    "bluebird": "^2.9.13",
+    "chai": "^2.1.0",
+    "log-colors": "^1.0.0",
+    "node-etcd": "^4.0.0"
+  }
+}
