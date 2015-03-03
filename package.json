@@ -1,5 +1,5 @@
 {
-  "name": "etcd-config",
+  "name": "etcd-service-registry",
   "version": "0.0.1",
   "description": "A node.js library to manage service discovery and registration on top of etcd",
   "main": "index.js",
@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/SidBala/etcd-config/issues"
   },
-  "homepage": "https://github.com/SidBala/etcd-config",
+  "homepage": "https://github.com/SidBala/ServiceRegistry",
   "dependencies": {
     "bluebird": "^2.9.13",
     "chai": "^2.1.0",
