@@ -7,10 +7,10 @@ In the common use case where your service is a docker container on top of CoreOS
 
 ## Connect to etcd
 ```js
-var Registry = require('etcd-service-registry')
+var Registry = require('etcd-service-registry');
 
-var registry = new Registry()
-var registry = new Registry('127.0.0.1', '4001')
+var registry = new Registry();
+var registry = new Registry('127.0.0.1', '4001');
 ```
 
 ## Register a service
@@ -28,9 +28,6 @@ registry.Register('MyServiceName',      // Name that will be used by your client
 A call to Discover will not fulfill until the required service has been registered into etcd.
 
 ```js
-var Registry = require('etcd-service-registry')
-var registry = new Registry()
-
 registry.Discover('MyServiceName')
 .then(function(service) {
         console.log(util.inspect(service))
@@ -50,9 +47,6 @@ registry.Discover('MyServiceName')
 A call to DiscoverAll will not fulfill until all the services specified have been registered into etcd.
 
 ```js
-var Registry = require('etcd-service-registry')
-var registry = new Registry()
-
 registry.DiscoverAll(['ServiceA', 'ServiceB'])
 .then(function(services) {
         console.log(util.inspect(services));
