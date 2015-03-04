@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SidBala/etcd-config.git"
+    "url": "https://github.com/SidBala/ServiceRegistry.git"
   },
   "keywords": [
     "service",
@@ -25,7 +25,7 @@
   "author": "Sid Bala <Sid.Bala@Outlook.com> (http://SidBala.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SidBala/etcd-config/issues"
+    "url": "https://github.com/SidBala/ServiceRegistry/issues"
   },
   "homepage": "https://github.com/SidBala/ServiceRegistry",
   "dependencies": {
