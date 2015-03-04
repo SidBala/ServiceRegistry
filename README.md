@@ -4,6 +4,7 @@ A library to manage service registry and discover over etcd.
 ## Connect to etcd
 ```js
 var Registry = require('etcd-service-registry')
+
 var registry = new Registry()
 var registry = new Registry('127.0.0.1', '4001')
 ```
