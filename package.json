@@ -4,8 +4,8 @@
   "description": "A node.js library to manage service discovery and registration on top of etcd",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive",
-    "watch": "mocha -w --recursive"
+    "test": "./node_modules/mocha/bin/mocha --recursive",
+    "watch": "./node_modules/mocha/bin/mocha -w --recursive"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "bluebird": "^2.9.13",
     "chai": "^2.1.0",
     "log-colors": "^1.0.0",
+    "mocha": "^2.1.0",
     "node-etcd": "^4.0.0",
     "underscore": "^1.8.2"
   }
