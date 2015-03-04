@@ -1,6 +1,6 @@
 {
   "name": "etcd-service-registry",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A node.js library to manage service discovery and registration on top of etcd",
   "main": "index.js",
   "scripts": {
@@ -32,6 +32,7 @@
     "bluebird": "^2.9.13",
     "chai": "^2.1.0",
     "log-colors": "^1.0.0",
-    "node-etcd": "^4.0.0"
+    "node-etcd": "^4.0.0",
+    "underscore": "^1.8.2"
   }
 }
