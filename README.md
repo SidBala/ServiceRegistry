@@ -33,8 +33,9 @@ var registry = new Registry()
 
 registry.Discover('MyServiceName')
 .then(function(service) {
-        console.log(util.inspect(service));
-    });
+        console.log(util.inspect(service))
+      })
+.then(...);
 
 // {
 //    name: 'MyServiceName',
@@ -55,7 +56,8 @@ var registry = new Registry()
 registry.DiscoverAll(['ServiceA', 'ServiceB'])
 .then(function(services) {
         console.log(util.inspect(services));
-    });
+      })
+.then(...);
 
 // { 
 //     ServiceA:
