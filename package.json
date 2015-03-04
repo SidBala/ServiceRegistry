@@ -4,7 +4,8 @@
   "description": "A node.js library to manage service discovery and registration on top of etcd",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -w --recursive"
+    "test": "mocha --recursive",
+    "watch": "mocha -w --recursive"
   },
   "repository": {
     "type": "git",
