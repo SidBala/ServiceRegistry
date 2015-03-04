@@ -1,6 +1,10 @@
 # ServiceRegistry
 A library to manage service registry and discover over etcd.
 
+You will need a connection to etcd. If you're registering services, you will additionally need the public ip of your host.
+
+In the common use case where your service is a docker container on top of CoreOS/Fleet, you will need to connect to the etcd endpoint at 172.17.42.1. You will determine your own ip/port by passing them as parameters in your fleet service definition.
+
 ## Connect to etcd
 ```js
 var Registry = require('etcd-service-registry')
@@ -21,9 +25,7 @@ registry.Register('MyServiceName',      // Name that will be used by your client
 
 ## Discover a service
 
-A call to Discover will not fulfill until the required service has been registered into etcd. You will need a connection to etcd and the ip of your bound host.
-
-In the common use case where your service is a docker container on top of CoreOS/Fleet, you will need to connect to the etcd endpoint at 172.17.42.1. You will determine your own ip/port by passing them as parameters in your fleet service definition.
+A call to Discover will not fulfill until the required service has been registered into etcd.
 
 ```js
 var Registry = require('etcd-service-registry')
