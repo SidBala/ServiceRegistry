@@ -23,7 +23,7 @@ registry.Register('MyServiceName',      // Name that will be used by your client
 
 A call to Discover will not fulfill until the required service has been registered into etcd. You will need a connection to etcd and the ip of your bound host.
 
-In the common use case where your service is a docker container on top of CoreOS/Fleet, you will need 
+In the common use case where your service is a docker container on top of CoreOS/Fleet, you will need to connect to the etcd endpoint at 172.17.42.1. You will determine your own ip/port by passing them as parameters in your fleet service definition.
 
 ```js
 var Registry = require('etcd-service-registry')
