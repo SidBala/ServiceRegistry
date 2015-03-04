@@ -2,62 +2,72 @@
 A library to manage service registry and discover over etcd.
 
 ## Connect to etcd
-    var Registry = require('etcd-service-registry')
-    var registry = new Registry()
-    var registry = new Registry('127.0.0.1', '4001')
+```js
+var Registry = require('etcd-service-registry')
+var registry = new Registry()
+var registry = new Registry('127.0.0.1', '4001')
+```
 
-## Expose a service
+## Register a service
 
-    registry.Register('MyServiceName',      // Name that will be used by your clients
-                      '10.244.1.105',       // IP that the service is bound to
-                      '8080',               // Port that the service is bound to
-                      ['Testing', 'V1.1'])  // Some metadata tags
-    .then(...);
+```js
+registry.Register('MyServiceName',      // Name that will be used by your clients
+                  '10.244.1.105',       // IP that the service is bound to
+                  '8080',               // Port that the service is bound to
+                  ['Testing', 'V1.1'])  // Some metadata tags
+.then(...);
+```
 
-## Discovering a service
+## Discover a service
 
-A call to Discover will not fulfill until the required service has been registered into etcd.
+A call to Discover will not fulfill until the required service has been registered into etcd. You will need a connection to etcd and the ip of your bound host.
 
-    var Registry = require('etcd-service-registry')
-    var registry = new Registry()
+In the common use case where your service is a docker container on top of CoreOS/Fleet, you will need 
 
-    registry.Discover('MyServiceName')
-    .then(function(service) {
-            console.log(util.inspect(service));
-        });
+```js
+var Registry = require('etcd-service-registry')
+var registry = new Registry()
 
-    // {
-    //    name: 'MyServiceName',
-    //    ip: '10.244.1.105',
-    //    port: '8080'
-    //    tags: ['Testing', 'V1.1']
-    // }
+registry.Discover('MyServiceName')
+.then(function(service) {
+        console.log(util.inspect(service));
+    });
 
-## Discovering several services at once
+// {
+//    name: 'MyServiceName',
+//    ip: '10.244.1.105',
+//    port: '8080'
+//    tags: ['Testing', 'V1.1']
+// }
+```
+
+## Discover several services at once
 
 A call to DiscoverAll will wait until all the services specified have been registered into etcd.
 
-    var Registry = require('etcd-service-registry')
-    var registry = new Registry()
+```js
+var Registry = require('etcd-service-registry')
+var registry = new Registry()
 
-    registry.DiscoverAll(['ServiceA', 'ServiceB'])
-    .then(function(services) {
-            console.log(util.inspect(services));
-        });
+registry.DiscoverAll(['ServiceA', 'ServiceB'])
+.then(function(services) {
+        console.log(util.inspect(services));
+    });
 
-    // { 
-    //     ServiceA:
-    //     { 
-    //        name: 'ServiceA',
-    //        ip: '192.168.1.1',
-    //        port: '80',
-    //        tags: [ 'Production', 'Version-1.12.3' ]
-    //     },
-    //     ServiceB:
-    //     {
-    //        name: 'ServiceB',
-    //        ip: '192.168.1.2',
-    //        port: '81',
-    //        tags: [ 'Production', 'Version-1.12.4' ]
-    //     }
-    // }
+// { 
+//     ServiceA:
+//     { 
+//        name: 'ServiceA',
+//        ip: '192.168.1.1',
+//        port: '80',
+//        tags: [ 'Production', 'Version-1.12.3' ]
+//     },
+//     ServiceB:
+//     {
+//        name: 'ServiceB',
+//        ip: '192.168.1.2',
+//        port: '81',
+//        tags: [ 'Production', 'Version-1.12.4' ]
+//     }
+// }
+```
