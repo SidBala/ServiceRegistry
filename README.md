@@ -44,7 +44,7 @@ registry.Discover('MyServiceName')
 
 ## Discover several services at once
 
-A call to DiscoverAll will wait until all the services specified have been registered into etcd.
+A call to DiscoverAll will not fulfill until all the services specified have been registered into etcd.
 
 ```js
 var Registry = require('etcd-service-registry')
