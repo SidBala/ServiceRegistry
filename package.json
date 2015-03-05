@@ -1,6 +1,6 @@
 {
   "name": "etcd-service-registry",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A node.js library to manage service discovery and registration on top of etcd",
   "main": "index.js",
   "scripts": {
