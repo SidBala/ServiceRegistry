@@ -1,0 +1,17 @@
+{
+  "name": "sidekick-cli",
+  "version": "0.0.1",
+  "description": "Command line Sidekick tool for registering services into etcd",
+  "main": "sidekick.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sid Bala <Sid.Bala@Outlook.com> (http://SidBala.com)",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.0.3",
+    "etcd-service-registry": "0.0.4",
+    "optimist": "^0.6.1",
+    "winston": "^0.9.0"
+  }
+}
