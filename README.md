@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/SidBala/ServiceRegistry.svg)](https://travis-ci.org/SidBala/ServiceRegistry)
+
 # ServiceRegistry
 A library to manage service registry and discover over etcd.
 
